@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: my-parse-app-ingress
+  annotations:
+    # kubernetes.io/ingress.allow-http: "false"
+    kubernetes.io/tls-acme: "true"
+    kubernetes.io/ingress.class: "gce" 
+spec:
+  tls:
+  - hosts:
+    - api.bizdate.mobi
+    secretName: my-parse-app-secret
+  rules:
+  - host: api.bizdate.mobi
+    http:
+      paths:
+      - path: /*
+        backend:
+          serviceName: my-parse-app-service
+          servicePort: 80 
+      - path: /.well-known/acme-challenge
+        backend:
+          serviceName: kube-lego-gce
+          servicePort: 8080      
+        

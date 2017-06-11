@@ -1,0 +1,9 @@
+{
+    "databaseURI": "mongodb://mongo:27017/my-db",
+    "appId": "0742vWqaHDnW5VkvbTogyh2O9UbdXDlAe19XOPd2Tc",
+    "masterKey": "La7U4b8Hxdsu2kwcV6ou08JWGlCdCETjkyR9H8DIXw",
+    "serverURL": "http://localhost:1337/parse",
+    "cloud": "./cloud/main.js",
+    "mountPath": "/parse",
+    "port": 1337
+}
